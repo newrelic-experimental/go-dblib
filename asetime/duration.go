@@ -26,10 +26,10 @@ const (
 )
 
 // Days returns duration in days.
-func (d ASEDuration) Days() int { return int(d / Day) }
+func (d ASEDuration) Days() int64 { return int64(d / Day) }
 
 // Hours returns duration in hours.
-func (d ASEDuration) Hours() int { return int(d / Hour) }
+func (d ASEDuration) Hours() int64 { return int64(d / Hour) }
 
 // Minutes returns duration in minutes.
 func (d ASEDuration) Minutes() int { return int(d / Minute) }
