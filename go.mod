@@ -5,7 +5,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-module github.com/newrelic-experimental/go-dblib
+module github.com/SAP/go-dblib
 
 go 1.19
 

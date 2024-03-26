@@ -11,7 +11,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/newrelic-experimental/go-dblib/dsn"
+	"github.com/SAP/go-dblib/dsn"
 )
 
 type Info struct {

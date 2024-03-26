@@ -10,7 +10,7 @@ package tds
 import (
 	"fmt"
 
-	"github.com/newrelic-experimental/go-dblib/asetypes"
+	"github.com/SAP/go-dblib/asetypes"
 )
 
 var _ Package = (*ParamFmtPackage)(nil)

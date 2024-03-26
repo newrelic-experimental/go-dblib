@@ -17,7 +17,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/newrelic-experimental/go-dblib/dsn"
+	"github.com/SAP/go-dblib/dsn"
 )
 
 var (

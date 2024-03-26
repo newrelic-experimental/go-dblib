@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/newrelic-experimental/go-dblib/asetypes"
+	"github.com/SAP/go-dblib/asetypes"
 )
 
 var (

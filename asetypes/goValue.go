@@ -15,7 +15,7 @@ import (
 	"time"
 	"unicode/utf16"
 
-	"github.com/newrelic-experimental/go-dblib/asetime"
+	"github.com/SAP/go-dblib/asetime"
 )
 
 // GoValue returns a value-interface based on a given byte slice and
@@ -204,7 +204,7 @@ func (t DataType) goValue(endian binary.ByteOrder, bs []byte) (interface{}, erro
 
 		x := int32(endian.Uint32(bs))
 		days := asetime.ASEDuration(x) * asetime.Day
-		return asetime.Epoch1900().AddDate(0, 0, int(days.Days())), nil
+		return asetime.Epoch1900().AddDate(0, 0, days.Days()), nil
 	case TIME, BIGTIMEN, TIMEN:
 		switch len(bs) {
 		case 0: // Null
@@ -241,7 +241,7 @@ func (t DataType) goValue(endian binary.ByteOrder, bs []byte) (interface{}, erro
 			ms := asetime.FractionalSecondToMillisecond(int(endian.Uint32(bs[4:])))
 
 			t := asetime.Epoch1900()
-			t = t.AddDate(0, 0, int(days.Days()))
+			t = t.AddDate(0, 0, days.Days())
 			t = t.Add(time.Duration(ms.Microseconds()) * time.Microsecond)
 
 			return t, nil
@@ -256,8 +256,8 @@ func (t DataType) goValue(endian binary.ByteOrder, bs []byte) (interface{}, erro
 		dur := asetime.ASEDuration(endian.Uint64(bs))
 
 		t := time.Date(0, time.January, 1, 0, 0, 0, 0, time.UTC)
-		t = t.AddDate(0, 0, int(dur.Days()))
-		ms := dur.Microseconds() - (int(dur.Days()) * int(asetime.Day))
+		t = t.AddDate(0, 0, dur.Days())
+		ms := dur.Microseconds() - (dur.Days() * int(asetime.Day))
 		t = t.Add(time.Duration(ms) * time.Microsecond)
 
 		return t, nil
