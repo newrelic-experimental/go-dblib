@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/SAP/go-dblib/dsn"
+	"github.com/newrelic-experimental/go-dblib/dsn"
 )
 
 // Info is a github.com/SAP/go-dblib/dsn compatible struct with required

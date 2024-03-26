@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SAP/go-dblib/asetypes"
+	"github.com/newrelic-experimental/go-dblib/asetypes"
 )
 
 //go:generate go run ./gen_type.go BigInt int64
@@ -544,24 +544,29 @@ func compareVarBinary(recv, expect []byte) bool {
 //go:generate go run ./gen_type.go NullVarBinary github.com/SAP/go-dblib/asetypes.NullBinary -columndef "varbinary(13) null" -compare compareNullBinary
 var samplesNullVarBinary = samplesNullBinary
 
-//go:generate go run ./gen_type.go Bit bool
 // Cannot be nulled
+//
+//go:generate go run ./gen_type.go Bit bool
 var samplesBit = []bool{true, false}
 
-//go:generate go run ./gen_type.go Image []byte -compare compareBinary
 // TODO: -null github.com/SAP/go-dblib/asetypes.NullBinary
+//
+//go:generate go run ./gen_type.go Image []byte -compare compareBinary
 var samplesImage = [][]byte{[]byte("test"), []byte("a longer test")}
 
 // TODO: Separate null test, ctlib transforms empty value to null
-//go:generate go run ./gen_type.go UniChar string -columndef "unichar(30) null" -compare compareChar
 // TODO: -null database/sql.NullString
+//
+//go:generate go run ./gen_type.go UniChar string -columndef "unichar(30) null" -compare compareChar
 var samplesUniChar = []string{"", "not a unicode example"}
 
 // TODO: Separate null test, ctlib transforms empty value to null
-//go:generate go run ./gen_type.go Text string -columndef "text null" -compare compareChar
 // TODO: -null database/sql.NullString
+//
+//go:generate go run ./gen_type.go Text string -columndef "text null" -compare compareChar
 var samplesText = []string{"", "a long text"}
 
-//go:generate go run ./gen_type.go UniText string -columndef unitext -compare compareChar
 // TODO: -null database/sql.NullString
+//
+//go:generate go run ./gen_type.go UniText string -columndef unitext -compare compareChar
 var samplesUniText = []string{"not a unicode example", "another not unicode example"}

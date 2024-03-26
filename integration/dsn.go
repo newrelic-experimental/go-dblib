@@ -11,7 +11,7 @@ import (
 	"database/sql"
 	"database/sql/driver"
 
-	"github.com/SAP/go-dblib/dsn"
+	"github.com/newrelic-experimental/go-dblib/dsn"
 )
 
 // genSQLDBFn is the signature of functions stored in the genSQLDBMap.

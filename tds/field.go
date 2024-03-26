@@ -22,7 +22,7 @@ package tds
 import (
 	"fmt"
 
-	"github.com/SAP/go-dblib/asetypes"
+	"github.com/newrelic-experimental/go-dblib/asetypes"
 )
 
 // Format and data status

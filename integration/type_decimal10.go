@@ -9,7 +9,7 @@ package integration
 import (
 	"database/sql"
 
-	"github.com/SAP/go-dblib/asetypes"
+	"github.com/newrelic-experimental/go-dblib/asetypes"
 
 	"testing"
 )

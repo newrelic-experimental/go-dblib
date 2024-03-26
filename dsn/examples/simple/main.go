@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/SAP/go-dblib/dsn"
+	"github.com/newrelic-experimental/go-dblib/dsn"
 )
 
 // Info is a struct implemented by a consumer of the dsn package.
