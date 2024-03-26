@@ -20,7 +20,7 @@ In git.domain.tld/libA/libACaps:
 
 	package libACaps
 
-	import "github.com/SAP/go-dblib/capability"
+	import "github.com/newrelic-experimental/go-dblib/capability"
 
 	var (
 		// Bug appeared in version 0.9.0, no published version has a fix

@@ -53,7 +53,7 @@ import (
     "database/sql"
 
     "github.com/SAP/go-dblib/dsn"
-    "github.com/SAP/go-ase"
+    "github.com/newrelic-experimental/go-ase"
 )
 
 func main() {
