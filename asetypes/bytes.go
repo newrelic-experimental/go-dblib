@@ -82,12 +82,12 @@ func (t DataType) Bytes(endian binary.ByteOrder, value interface{}, length int64
 		bs := make([]byte, length)
 		switch length {
 		case 4: // SHORTDATE/DATETIME4, DATETIMEN(4)
-			s := asetime.ASEDuration(t.Microseconds() - int(days)*int(asetime.Day))
+			s := asetime.ASEDuration(int64(t.Microseconds()) - int64(days)*int64(asetime.Day))
 			binary.LittleEndian.PutUint16(bs[:2], uint16(days))
 			binary.LittleEndian.PutUint16(bs[2:], uint16(s.Minutes()))
 		case 8: // DATETIME, DATETIMEN(8)
-			s := t.Microseconds() - int(days)*int(asetime.Day)
-			s = asetime.MillisecondToFractionalSecond(s)
+			s := int64(t.Microseconds()) - int64(days)*int64(asetime.Day)
+			s = int64(asetime.MillisecondToFractionalSecond(int(s)))
 			binary.LittleEndian.PutUint32(bs[:4], uint32(days))
 			binary.LittleEndian.PutUint32(bs[4:], uint32(s))
 		}

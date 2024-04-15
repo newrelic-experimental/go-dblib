@@ -257,7 +257,7 @@ func (t DataType) goValue(endian binary.ByteOrder, bs []byte) (interface{}, erro
 
 		t := time.Date(0, time.January, 1, 0, 0, 0, 0, time.UTC)
 		t = t.AddDate(0, 0, int(dur.Days()))
-		ms := dur.Microseconds() - (int(dur.Days()) * int(asetime.Day))
+		ms := int64(dur.Microseconds()) - (int64(dur.Days()) * int64(asetime.Day))
 		t = t.Add(time.Duration(ms) * time.Microsecond)
 
 		return t, nil
