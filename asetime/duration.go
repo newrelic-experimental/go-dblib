@@ -13,7 +13,7 @@ import (
 )
 
 // ASEDuration is the reference time-unit as microseconds.
-type ASEDuration int
+type ASEDuration int64
 
 // Base time-units in reference to ASEDuration.
 const (
